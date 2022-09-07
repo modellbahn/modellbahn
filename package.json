@@ -1,0 +1,28 @@
+{
+  "name": "modellbahn",
+  "version": "1.0.0",
+  "description": "Write Javascript Code to control your model railway",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/modellbahn/modellbahn.git"
+  },
+  "keywords": [
+    "modellbahn",
+    "modelrailway",
+    "model-railway",
+    "modelleisenbahn"
+  ],
+  "author": "Green_Lab <greencoder001@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/modellbahn/modellbahn/issues"
+  },
+  "homepage": "https://github.com/modellbahn/modellbahn#readme",
+  "dependencies": {
+    "johnny-five": "^2.1.0"
+  }
+}
