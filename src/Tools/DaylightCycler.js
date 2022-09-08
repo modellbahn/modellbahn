@@ -9,8 +9,8 @@ module.exports = class DaylightCycler {
         this.time = options.sunrise
         this.minutes = 0
         this.ratio = {
-            day: [sunrise, sunrise + parseInt(options.dayNightRatio.split(':')[0]) - 1],
-            night: [sunrise + parseInt(options.dayNightRatio.split(':')[0]), sunrise - 1]
+            day: [options.sunrise, options.sunrise + parseInt(options.dayNightRatio.split(':')[0]) - 1],
+            night: [options.sunrise + parseInt(options.dayNightRatio.split(':')[0]), options.sunrise - 1]
         }
         this.evMHandlers = []
 
@@ -25,17 +25,22 @@ module.exports = class DaylightCycler {
     }
 
     $everyHour (p) {
-        p.time += 1
-        p.minutes = 0
-        if (p.time >= 24) p.time = 0
+        return () => {
+            p.time += 1
+            p.minutes = 0
+            if (p.time >= 24) p.time = 0  
+        }
+        
     }
 
     $everyMinute (p) {
-        p.minutes += 1
-        if (p.minutes >= 60) p.minutes = 0
+        return () => {
+            p.minutes += 1
+            if (p.minutes >= 60) p.minutes = 0
 
-        for (const evm of p.evMHandlers) {
-            evm(p)
+            for (const evm of p.evMHandlers) {
+                evm(p)
+            }
         }
     }
 

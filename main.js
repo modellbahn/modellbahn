@@ -9,8 +9,14 @@ const cycler = new DaylightCycler({
 })
 cycler.start()
 
-const weiche1 = new Weiche(2, 3)
+slave.onready(async () => {
+    const weiche1 = new Weiche(26, 27)
 
-slave.attach([
-    weiche1
-])
+    setInterval(async () => {
+        await weiche1.toggle()
+    }, 3000)
+
+    slave.attach([
+        weiche1
+    ])
+})

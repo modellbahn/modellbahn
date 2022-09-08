@@ -6,7 +6,7 @@ module.exports = {
     Slave,
 
     // Tools
-    DaylightCycler,
+    DaylightCycler: require('./src/Tools/DaylightCycler'),
 
     // Devices
     Weiche: require('./src/Devices/Weiche')

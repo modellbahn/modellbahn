@@ -29,7 +29,7 @@ module.exports = class Weiche extends Device {
         this.leftPin.on()
         await sleep(100)
         this.leftPin.off()
-        this.state = 'right'
+        this.state = 'left'
     }
 
     async right() {
