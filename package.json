@@ -1,6 +1,6 @@
 {
   "name": "modellbahn",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Write Javascript Code to control your model railway",
   "main": "index.js",
   "scripts": {
