@@ -31,7 +31,7 @@ module.exports = class Weiche extends Device {
         const done = await global.weichenmanager.myturn()
 
         this.leftPin.on()
-        await sleep(50)
+        await sleep(10)
         this.leftPin.off()
         this.state = 'left'
 
@@ -42,7 +42,7 @@ module.exports = class Weiche extends Device {
         const done = await global.weichenmanager.myturn()
 
         this.rightPin.on()
-        await sleep(50)
+        await sleep(10)
         this.rightPin.off()
         this.state = 'right'
 
