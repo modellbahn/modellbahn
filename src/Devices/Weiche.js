@@ -23,20 +23,30 @@ module.exports = class Weiche extends Device {
         this.rightPin = this.$out(rightPin)
         this.onAttached = this.left
         this.state = 'left'
+
+        if (!global.weichenmanager) global.weichenmanager = new require('../Weichenmanager')()
     }
 
     async left () {
+        const done = await global.weichenmanager.myturn()
+
         this.leftPin.on()
-        await sleep(100)
+        await sleep(10)
         this.leftPin.off()
         this.state = 'left'
+
+        done()
     }
 
     async right() {
+        const done = await global.weichenmanager.myturn()
+
         this.rightPin.on()
-        await sleep(100)
+        await sleep(10)
         this.rightPin.off()
         this.state = 'right'
+
+        done()
     }
 
     async toggle() {

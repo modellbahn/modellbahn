@@ -14,7 +14,7 @@ slave.onready(async () => {
 
     setInterval(async () => {
         await weiche1.toggle()
-    }, 3000)
+    }, 10000)
 
     slave.attach([
         weiche1
