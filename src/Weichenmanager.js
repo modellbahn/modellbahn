@@ -15,7 +15,7 @@ module.exports = class Weichenmanager {
                 current.shift()
                 p.isQueueHandling = false
             })
-        }, 25)
+        }, 100)
     }
 
     qPush (cb) {
