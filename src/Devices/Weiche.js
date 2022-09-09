@@ -24,7 +24,7 @@ module.exports = class Weiche extends Device {
         this.onAttached = this.left
         this.state = 'left'
 
-        if (!global.weichenmanager) global.weichenmanager = new require('../Weichenmanager')()
+        if (!global.weichenmanager) global.weichenmanager = new (require('../Weichenmanager'))()
     }
 
     async left () {

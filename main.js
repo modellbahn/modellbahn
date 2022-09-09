@@ -1,4 +1,4 @@
-const { Slave, DaylightCycler, Weiche } = require('.')
+const { Slave, DaylightCycler, Weiche } = require('modellbahn')
 
 const slave = new Slave()
 const cycler = new DaylightCycler({
