@@ -12,6 +12,7 @@ module.exports = class Weichenmanager {
             let current = p.queue[0]
             current[0]()
             current[1](() => {
+                current.shift()
                 p.isQueueHandling = false
             })
         }, 25)
