@@ -35,6 +35,7 @@ module.exports = class Weiche extends Device {
         this.leftPin.off()
         this.state = 'left'
 
+        await sleep(500)
         done()
     }
 
@@ -46,6 +47,7 @@ module.exports = class Weiche extends Device {
         this.rightPin.off()
         this.state = 'right'
 
+        await sleep(500)
         done()
     }
 
