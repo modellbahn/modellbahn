@@ -9,5 +9,8 @@ module.exports = {
     DaylightCycler: require('./src/Tools/DaylightCycler'),
 
     // Devices
-    Weiche: require('./src/Devices/Weiche')
+    Weiche: require('./src/Devices/Weiche'),
+
+    // Soundcheck
+    soundcheck: require('./src/Tools/soundcheck'),
 }

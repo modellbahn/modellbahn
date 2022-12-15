@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/modellbahn/modellbahn#readme",
   "dependencies": {
-    "johnny-five": "^2.1.0"
+    "johnny-five": "^2.1.0",
+    "play-sound": "^1.1.5"
   }
 }
