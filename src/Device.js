@@ -1,5 +1,6 @@
 const Pin = require('./Pin')
 const InputPin = require('./InputPin')
+const PWMPin = require('./PWMPin')
 
 class Device {
     constructor () {
@@ -11,8 +12,12 @@ class Device {
         return new Pin(pinNum)
     }
 
-    $in () {
+    $in (pinNum) {
         return new InputPin(pinNum)
+    }
+
+    $pwm (pinNum) {
+        return new PWMPin(pinNum)
     }
 
     $attachSlave (slave) {

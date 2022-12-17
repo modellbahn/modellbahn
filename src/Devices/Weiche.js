@@ -1,8 +1,6 @@
 const Device = require('../Device')
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms))
-}
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 module.exports = class Weiche extends Device {
     /**
