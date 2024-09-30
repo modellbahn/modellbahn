@@ -1,5 +1,5 @@
 # modellbahn
- Write Javascript Code to control your model railway
+ Write Typescript Code to control your model railway
 
 # Requirements
 * [Node.js](https://nodejs.org/)
