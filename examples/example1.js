@@ -1,4 +1,4 @@
-const { Slave, DaylightCycler, Weiche, Fahrtenregler, sleep } = require('.')
+const { Slave, DaylightCycler, Weiche, Fahrtenregler, sleep } = require('../dist/index.js')
 
 const slave = new Slave()
 const cycler = new DaylightCycler({

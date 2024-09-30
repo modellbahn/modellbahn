@@ -1,29 +1,32 @@
 {
-  "name": "modellbahn",
-  "version": "2.3.0",
-  "description": "Write Javascript Code to control your model railway",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/modellbahn/modellbahn.git"
-  },
-  "keywords": [
-    "modellbahn",
-    "modelrailway",
-    "model-railway",
-    "modelleisenbahn"
-  ],
-  "author": "Green_Lab <greencoder001@outlook.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/modellbahn/modellbahn/issues"
-  },
-  "homepage": "https://github.com/modellbahn/modellbahn#readme",
-  "dependencies": {
-    "johnny-five": "^2.1.0",
-    "play-sound": "^1.1.5"
-  }
+    "name": "modellbahn",
+    "version": "0.2.0",
+    "description": "Write Javascript Code to control your model railway",
+    "main": "dist/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Cabra (https://github.com/cabraviva)",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/modellbahn/modellbahn.git"
+    },
+    "bugs": {
+        "url": "https://github.com/modellbahn/modellbahn/issues"
+    },
+    "homepage": "https://github.com/modellbahn/modellbahn#readme",
+    "types": "dist/index.d.ts",
+    "devDependencies": {
+        "@types/ffbinaries": "^1.1.5",
+        "@types/johnny-five": "^2.1.9",
+        "@types/node": "^22.7.4",
+        "typescript": "^5.6.2"
+    },
+    "dependencies": {
+        "cli-sound": "^1.1.3",
+        "ffbinaries": "^1.1.6",
+        "johnny-five": "^2.1.0"
+    }
 }

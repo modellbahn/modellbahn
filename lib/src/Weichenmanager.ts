@@ -1,4 +1,7 @@
-module.exports = class Weichenmanager {
+export default class Weichenmanager {
+    queue: [Function, Function][] = []
+    isQueueHandling: boolean = false
+
     constructor () {
         this.queue = []
         this.isQueueHandling = false
@@ -18,25 +21,34 @@ module.exports = class Weichenmanager {
         }, 100)
     }
 
-    qPush (cb) {
+    /**
+     * 
+     * @param cb Function that gets called when the Weichenschaltung should be executed
+     * @returns Function that needs to be executed to indicate the Weichenschaltung was completed
+     */
+    #qPush (cb: Function): Promise<Function> {
         let p = this
             
         return new Promise((resolve, reject) => {
-            const callOnDone = (donefn) => {
+            const callOnDone = (donefn: Function) => {
                 resolve(donefn)
             }
             p.queue.push([cb, callOnDone])
         })
     }
 
-    myturn () {
+    /**
+     * Async function which reserves a spot in the queue and resolved when it's your turn. Resolves a done function, which needs to be called after Weichenschaltung was executed, so that the queue can proceed.
+     * @returns Promise which resolves to a done fn
+     */
+    myturn (): Promise<Function> {
         let p = this
 
         return new Promise(async (resolve, reject) => {
 
             if (p.queue.length === 0) return resolve(() => {})
 
-            let done = await p.qPush(() => {
+            let done = await p.#qPush(() => {
                 resolve(done)
             })
         })

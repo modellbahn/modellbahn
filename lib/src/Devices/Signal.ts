@@ -1,11 +1,14 @@
-const Device = require('../Device')
+import Device from '../Device'
 
-module.exports = class Signal extends Device {
+export default class Signal extends Device {
+    pin
+    state: 'green' | 'red'
+
     /**
      * @description Creates a new Device of type Signal
-     * @param {Number} pin Pin Number for the relay
+     * @param {Number|String} pin Pin Number for the relay
      */
-    constructor (pin) {
+    constructor (pin: number | string) {
         // ################################### //
         // ############## Init ############### //
         // ################################### //

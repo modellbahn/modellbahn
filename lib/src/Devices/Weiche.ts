@@ -1,14 +1,20 @@
-const Device = require('../Device')
+import Device from '../Device'
+import WeichenManager from '../Weichenmanager'
+import '../../../global'
 
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
-module.exports = class Weiche extends Device {
+export default class Weiche extends Device {
+    leftPin
+    rightPin
+    state: 'left' | 'right'
+
     /**
      * @description Creates a new Device of type Weiche
      * @param {Number} leftPin Pin Number for pin to be pulled up if switched to left
      * @param {Number} rightPin Pin Number for pin to be pulled up if switched to right
      */
-    constructor(leftPin, rightPin) {
+    constructor(leftPin: number | string, rightPin: number | string) {
         // ################################### //
         // ############## Init ############### //
         // ################################### //
@@ -22,11 +28,13 @@ module.exports = class Weiche extends Device {
         this.onAttached = this.left
         this.state = 'left'
 
-        if (!global.weichenmanager) global.weichenmanager = new (require('../Weichenmanager'))()
+        // @ts-expect-error: Declared in global.d.ts but VSCode is weird
+        if (!global.weichenmanager) global.weichenmanager = new WeichenManager()
     }
 
     async left () {
-        const done = await global.weichenmanager.myturn()
+        // @ts-expect-error: Declared in global.d.ts but VSCode is weird
+        const done: Function = await global.weichenmanager.myturn()
 
         this.leftPin.on()
         await sleep(30)
@@ -38,7 +46,8 @@ module.exports = class Weiche extends Device {
     }
 
     async right() {
-        const done = await global.weichenmanager.myturn()
+        // @ts-expect-error: Declared in global.d.ts but VSCode is weird
+        const done: Function = await global.weichenmanager.myturn()
 
         this.rightPin.on()
         await sleep(30)
