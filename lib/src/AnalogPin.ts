@@ -1,17 +1,17 @@
 import * as five from 'johnny-five'
 
 class InputPin {
-    number: number
+    number: string | number
     readonly state: 'on' | 'off'
     fivePin: five.Pin
 
-    constructor(number: number) {
+    constructor(number: string | number) {
         this.number = number
         this.state = 'off'
         this.fivePin = new five.Pin({
             pin: number
         })
-        this.fivePin.mode = five.PinMode.INPUT
+        this.fivePin.mode = five.PinMode.ANALOG
     }
 
     read () {

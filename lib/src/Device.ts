@@ -1,6 +1,7 @@
 import Pin from './Pin'
 import InputPin from './InputPin'
 import PWMPin from './PWMPin'
+import AnalogPin from './AnalogPin'
 import Slave from './Slave'
 
 class Device {
@@ -22,6 +23,10 @@ class Device {
 
     $pwm (pinNum: number) {
         return new PWMPin(pinNum)
+    }
+
+    $analog(pin: string) {
+        return new AnalogPin(pin)
     }
 
     $attachSlave(slave: Slave) {
