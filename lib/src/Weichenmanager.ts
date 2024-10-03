@@ -45,9 +45,6 @@ export default class Weichenmanager {
         let p = this
 
         return new Promise(async (resolve, reject) => {
-
-            if (p.queue.length === 0) return resolve(() => {})
-
             let done = await p.#qPush(() => {
                 resolve(done)
             })
