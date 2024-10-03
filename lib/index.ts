@@ -4,9 +4,9 @@ import Weiche from './src/Devices/Weiche'
 import Signal from './src/Devices/Signal'
 import Fahrtenregler from './src/Devices/Fahrtenregler'
 import soundcheck from './src/Tools/soundcheck'
+import SpeakerController from './src/Tools/SpeakerController'
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
-
 
 export default {
     // Slave
@@ -22,5 +22,6 @@ export default {
     Fahrtenregler,
 
     // Soundcheck
-    soundcheck
+    soundcheck,
+    SpeakerController
 }

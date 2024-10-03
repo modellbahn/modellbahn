@@ -1,6 +1,7 @@
 import SpeakerController from './SpeakerController'
 
-export default () => {
-    /*const { play } = new SpeakerController(__dirname)
-    return play('soundcheck.ogg')*/
+export default async () => {
+    const sc = new SpeakerController(__dirname)
+    await sc.init()
+    return sc.play('soundcheck.ogg')
 }

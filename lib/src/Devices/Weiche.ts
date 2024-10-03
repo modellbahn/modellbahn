@@ -1,6 +1,5 @@
 import Device from '../Device'
 import WeichenManager from '../Weichenmanager'
-import '../../../global'
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
